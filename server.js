@@ -4,8 +4,9 @@ if (process.env.NODE_ENV !== 'production')
 }
 
 
-const express2 = require('express')
-const app = express2()
+const express1 = require('express')
+const app = express1()
+
 const bcrypt = require('bcrypt')
 const passport = require('passport')
 const flash = require('express-flash')
@@ -22,7 +23,9 @@ initializePassport(
 const users = []
 
 app.set('view-engine', 'ejs')
-app.use(express2.urlencoded({ extended: false }))
+
+app.use(express1.urlencoded({ extended: false }))
+
 app.use(flash())
 app.use(session({
   secret: process.env.SESSION_SECRET,
